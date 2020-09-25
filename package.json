@@ -1,0 +1,84 @@
+{
+  "name": "@mcontigo/underline",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A MContigo library to provider component utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcontigo/underline"
+  },
+  "author": "Dionatan Araújo <daraujo@mcontigo.com>",
+  "contributors": [],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm-run-all -s clean rollup:build",
+    "build:watch": "npm run clean && npm-run-all -p clean rollup:watch",
+    "changelog": "cross-env auto-changelog && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && git push",
+    "clean": "rimraf dist",
+    "lint": "eslint ./src --ext .js",
+    "lint:fix": "eslint ./src --ext .js --fix",
+    "package:order": "npx sort-package-json",
+    "prepare": "npm run build",
+    "rollup:build": "rollup -c config/rollup.config.js",
+    "rollup:watch": "rollup -c config/rollup.config.js -w"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/eslint-parser": "^7.11.3",
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@babel/plugin-syntax-export-default-from": "^7.10.4",
+    "@babel/plugin-syntax-import-meta": "^7.10.1",
+    "@babel/plugin-syntax-jsx": "^7.10.1",
+    "@babel/plugin-transform-flow-strip-types": "^7.10.1",
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
+    "@babel/plugin-transform-regenerator": "^7.10.1",
+    "@babel/plugin-transform-runtime": "7.10.5",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-flow": "^7.10.1",
+    "@babel/preset-modules": "^0.1.3",
+    "@babel/preset-react": "7.10.4",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "7.1.3",
+    "auto-changelog": "^1.14.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.1.4",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "husky": "^4.2.5",
+    "next": "^9.5.2",
+    "npm-run-all": "4.1.5",
+    "rimraf": "2.7.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-async": "^1.2.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-size-snapshot": "0.12.0",
+    "rollup-plugin-terser": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "copyright": "Copyright 2020 MContigo Group"
+}

@@ -1,0 +1,8 @@
+.gitlab-ci.yml
+.gitlab
+config
+example
+node_modules
+.dockerignore
+.DS_Store
+.idea
