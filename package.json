@@ -1,6 +1,6 @@
 {
   "name": "@mcontigo/underline",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "A MContigo library to provider component utils",
   "repository": {
